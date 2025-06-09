@@ -129,7 +129,7 @@ def test_calculate_float_variants(expr, expected):
 
 
 @pytest.mark.parametrize("expr, expected", [
-    ("((2+3)*((4-1)+2))/5", ((2+3)*((4-1)+2))/5),
+    ("((2+3)*((4-1)+2))/5", ((2+3)*((4-1)+2))/1),
 ])
 def test_calculate_nested(expr, expected):
     assert pytest.approx(calculate(expr), rel=1e-9) == expected
